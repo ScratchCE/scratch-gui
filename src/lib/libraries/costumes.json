@@ -12830,5 +12830,197 @@
         "md5ext": "665db4c356d7e010fa8d71cc291834e3.svg",
         "rotationCenterX": 17,
         "rotationCenterY": 23
+    },
+	{
+        "assetId": "8473fd319e10bf033245ad432ea68e29",
+        "name": "Copper Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "8473fd319e10bf033245ad432ea68e29.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 25.52274513244629,
+        "rotationCenterY": 17.541205667678156
+    },
+    {
+        "assetId": "e009aa64c073d018e1e2818a0010037e",
+        "name": "Emerald Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "e009aa64c073d018e1e2818a0010037e.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 28.198494895629864,
+        "rotationCenterY": 22.539471668675333
+    },
+    {
+        "assetId": "15db264e84271476402666b3055092f1",
+        "name": "Lapis Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "15db264e84271476402666b3055092f1.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 32.14046497249825,
+        "rotationCenterY": 30.402360539609504
+    },
+    {
+        "assetId": "435a4529660c29006d24f924de519f9e",
+        "name": "Redstone Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "435a4529660c29006d24f924de519f9e.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 25.245312016768736,
+        "rotationCenterY": 28.209815515747067
+    },
+    {
+        "assetId": "561e09faca1d9932aa2625b7e5e380e1",
+        "name": "Quartz Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "561e09faca1d9932aa2625b7e5e380e1.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 30.60478892684037,
+        "rotationCenterY": 33.5238141560979
+    },
+    {
+        "assetId": "073aa9d617c11df1ec4a945c180f27ec",
+        "name": "Iron Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "073aa9d617c11df1ec4a945c180f27ec.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 35.72891616821289,
+        "rotationCenterY": 28.24633153789071
+    },
+    {
+        "assetId": "3667c8acc2fd9eb9f3f3ebb36ad1cacf",
+        "name": "Coal Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "3667c8acc2fd9eb9f3f3ebb36ad1cacf.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 27.510338943556064,
+        "rotationCenterY": 27.08238513977051
+    },
+    {
+        "assetId": "76f2609f49619b9463d201f1f70fc2ca",
+        "name": "Diamond Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "76f2609f49619b9463d201f1f70fc2ca.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 30.666664123535128,
+        "rotationCenterY": 26.203296291828934
+    },
+    {
+        "assetId": "04085d266ab2d1e3bab132f5466f1d98",
+        "name": "Golden Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "04085d266ab2d1e3bab132f5466f1d98.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 30.965347246719148,
+        "rotationCenterY": 28.680362405143228
+    },
+    {
+        "assetId": "ddc45fac38410b21cd628b4371e4f14b",
+        "name": "Netherite Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "ddc45fac38410b21cd628b4371e4f14b.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 34.461640177918866,
+        "rotationCenterY": 25.304494719374418
+    },
+    {
+        "assetId": "7ae8420a4edd7f44e732dc05738c04c9",
+        "name": "Ancient Debris Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "7ae8420a4edd7f44e732dc05738c04c9.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 31.19933461425785,
+        "rotationCenterY": 24.961527366782775
+    },
+    {
+        "assetId": "b8ed6002fa83dfb11a2696ccbc9c4559",
+        "name": "Amethyst Fish",
+		"tags": [
+            "animals",
+            "mineral",
+            "-gge",
+            "LandonHarter",
+            "mineral fish"
+        ],
+        "bitmapResolution": 1,
+        "md5ext": "b8ed6002fa83dfb11a2696ccbc9c4559.svg",
+        "dataFormat": "svg",
+        "rotationCenterX": 28.15358897345382,
+        "rotationCenterY": 26.92694730193182
     }
 ]

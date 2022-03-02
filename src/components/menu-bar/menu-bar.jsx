@@ -82,7 +82,8 @@ import aboutIcon from './icon--about.svg';
 import errorIcon from './tw-error.svg';
 import themeIcon from './tw-moon.svg';
 
-import scratchLogo from './scratch-logo.svg';
+//import scratchLogo from './scratch-logo.svg';
+import scratchLogo from './scratchce-beta.svg';
 
 import sharedMessages from '../../lib/shared-messages';
 
@@ -433,7 +434,7 @@ class MenuBar extends React.Component {
                         {this.props.onClickLogo ? (
                             <div className={classNames(styles.menuBarItem)}>
                                 <img
-                                    alt="Scratch"
+                                    alt="Scratch Community Edition"
                                     className={classNames(styles.scratchLogo, {
                                         [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
                                     })}
@@ -863,14 +864,13 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://scratch.mit.edu/users/GarboMuffin/#comments"
+                            href="https://scratch.mit.edu/users/CST1229/#comments"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            {/* todo: icon */}
                             <Button className={styles.feedbackButton}>
                                 <FormattedMessage
-                                    defaultMessage="TurboWarp Feedback"
+                                    defaultMessage="Feedback"
                                     description="Button to give feedback in the menu bar"
                                     id="tw.feedbackButton"
                                 />
@@ -982,7 +982,8 @@ MenuBar.propTypes = {
 
 MenuBar.defaultProps = {
     logo: scratchLogo,
-    onShare: () => {}
+    onShare: () => {},
+	onClickLogo: () => {}
 };
 
 const mapStateToProps = (state, ownProps) => {

@@ -87,8 +87,14 @@ export default function (vm) {
     };
 
     const costumesMenu = function () {
+		const next = ScratchBlocks.ScratchMsgs.translate('LOOKS_NEXTCOSTUME', 'next costume');
+        const previous = ScratchBlocks.ScratchMsgs.translate('LOOKS_PREVIOUSCOSTUME', 'previous costume');
+        const random = ScratchBlocks.ScratchMsgs.translate('LOOKS_RANDOMCOSTUME', 'random costume');
         if (vm.editingTarget && vm.editingTarget.getCostumes().length > 0) {
-            return vm.editingTarget.getCostumes().map(costume => [costume.name, costume.name]);
+            return vm.editingTarget.getCostumes().map(costume => [costume.name, costume.name])
+                .concat([[next, 'next costume'],
+                    [previous, 'previous costume'],
+                    [random, 'random costume']]);
         }
         return [['', '']];
     };
@@ -120,16 +126,13 @@ export default function (vm) {
             if (!vm.runtime.targets.hasOwnProperty(targetId)) continue;
             if (vm.runtime.targets[targetId].isOriginal) {
                 if (!vm.runtime.targets[targetId].isStage) {
-                    if (vm.runtime.targets[targetId] === vm.editingTarget) {
-                        continue;
-                    }
                     sprites.push([vm.runtime.targets[targetId].sprite.name, vm.runtime.targets[targetId].sprite.name]);
                 }
             }
         }
         return sprites;
     };
-
+	
     const cloneMenu = function () {
         if (vm.editingTarget && vm.editingTarget.isStage) {
             const menu = spriteMenu();
@@ -140,6 +143,18 @@ export default function (vm) {
         }
         const myself = ScratchBlocks.ScratchMsgs.translate('CONTROL_CREATECLONEOF_MYSELF', 'myself');
         return [[myself, '_myself_']].concat(spriteMenu());
+    };
+	
+	const tellMenu = function () {
+        if (vm.editingTarget && vm.editingTarget.isStage) {
+            const menu = spriteMenu();
+            if (menu.length === 0) {
+                return [['', '']]; // Empty menu matches Scratch 2 behavior
+            }
+            return menu;
+        }
+        const stage = ScratchBlocks.ScratchMsgs.translate('CONTROL_TELL_STAGE', 'Stage');
+        return [[stage, '_stage_']].concat(spriteMenu());
     };
 
     const soundColors = ScratchBlocks.Colours.sounds;
@@ -314,6 +329,11 @@ export default function (vm) {
 
     ScratchBlocks.Blocks.control_create_clone_of_menu.init = function () {
         const json = jsonForMenuBlock('CLONE_OPTION', cloneMenu, controlColors, []);
+        this.jsonInit(json);
+    };
+	
+	ScratchBlocks.Blocks.control_tell_menu.init = function () {
+        const json = jsonForMenuBlock('SPRITE', tellMenu, controlColors, []);
         this.jsonInit(json);
     };
 

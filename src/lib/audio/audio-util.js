@@ -18,7 +18,7 @@ const _computeRMS = function (samples, start, end, scaling = 0.55) {
 
 const computeRMS = (samples, scaling) => _computeRMS(samples, 0, samples.length, scaling);
 
-const computeChunkedRMS = function (samples, chunkSize = 1024) {
+const computeChunkedRMS = function (samples, chunkSize = 5) {
     const sampleCount = samples.length;
     const chunkLevels = [];
     for (let i = 0; i < sampleCount; i += chunkSize) {

@@ -44,7 +44,9 @@
 }
 
 .scratch-logo {
-    height:  1.6rem;
+    height: 2.25rem;
+	position: relative;
+	bottom: 0.3em;
     vertical-align: middle;
 }
 

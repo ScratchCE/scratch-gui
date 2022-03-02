@@ -220,7 +220,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
-            <block type="looks_nextbackdrop"/>
+            <block type="looks_navbackdrop"/>
         ` : `
             <block id="${targetId}_switchcostumeto" type="looks_switchcostumeto">
                 <value name="COSTUME">
@@ -229,7 +229,15 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
-            <block type="looks_nextcostume"/>
+			<block type="looks_changecostumeby" id="looks_changecostumeby">
+                <value name="CHANGE">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_navcostume"/>
+			${blockSeparator}
             <block type="looks_switchbackdropto">
                 <value name="BACKDROP">
                     <shadow type="looks_backdrops">
@@ -237,7 +245,14 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
-            <block type="looks_nextbackdrop"/>
+			<block type="looks_changebackdropby" id="looks_changebackdropby">
+                <value name="CHANGE">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_navbackdrop"/>
             ${blockSeparator}
             <block type="looks_changesizeby">
                 <value name="CHANGE">
