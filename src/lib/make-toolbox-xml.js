@@ -455,6 +455,8 @@ const control = function (isInitialSetup, isStage) {
             </block>
             <block type="control_delete_this_clone"/>
         `}
+		${blockSeparator}
+		<block type="control_restart"/>
         ${categorySeparator}
     </category>
     `;
