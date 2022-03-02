@@ -306,7 +306,7 @@ const DisableCompiler = props => (
         help={
             <FormattedMessage
                 // eslint-disable-next-line max-len
-                defaultMessage="Disables the TurboWarp compiler. You may want to enable this while editing projects so that scripts update immediately. Otherwise, you should never enable this."
+                defaultMessage="Disables the TurboWarp compiler. You probably should not enable it since most Scratch CE blocks won't work with it enabled."
                 description="Disable Compiler help"
                 id="tw.settingsModal.disableCompilerHelp"
             />

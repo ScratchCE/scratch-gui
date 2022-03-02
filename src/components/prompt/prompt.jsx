@@ -121,10 +121,11 @@ const PromptComponent = props => (
                         </Box> : null}
                 </div> : null}
 
-            {props.cloudSelected && props.canAddCloudVariable && (
+			{/* disabled: no packager and no uploading to Scratch
+			{props.cloudSelected && props.canAddCloudVariable && (
                 <Box className={styles.infoMessage}>
                     <FormattedMessage
-                        /* eslint-disable-next-line max-len */
+                        /* eslint-disable-next-line max-len 
                         defaultMessage="Although you can create cloud variables, they won't work unless this project is uploaded to Scratch or using a tool such as the {packager}."
                         description="Reminder that cloud variables may not work when the editor is open"
                         values={{
@@ -134,7 +135,6 @@ const PromptComponent = props => (
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    {/* Should not be translated */}
                                     {'TurboWarp Packager'}
                                 </a>
                             )
@@ -142,7 +142,7 @@ const PromptComponent = props => (
                         id="tw.cantUseCloud"
                     />
                 </Box>
-            )}
+            )}*/}
 
             <Box className={styles.buttonRow}>
                 <button

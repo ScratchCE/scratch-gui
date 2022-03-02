@@ -107,7 +107,7 @@ class CloudProvider {
         if (e && e.code === 4004) {
             // this is temporary
             // eslint-disable-next-line no-alert
-            alert('TurboWarp cloud variables are temporarily disabled in this project.');
+            alert('Cloud variables are temporarily disabled in this project.');
             log.info('Cloud project is unavailable. Not reconnecting.');
             return;
         }

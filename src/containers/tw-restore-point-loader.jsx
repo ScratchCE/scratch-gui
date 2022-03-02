@@ -18,7 +18,7 @@ const messages = defineMessages({
     },
     confirm: {
         // eslint-disable-next-line max-len
-        defaultMessage: 'TurboWarp records one automatic restore point in case something went wrong and you forgot to save. You shouldn\'t rely on this and we can\'t guarantee it will recover your project. Try to load it?',
+        defaultMessage: 'Scratch Community Edition records one automatic restore point in case something went wrong and you forgot to save. You shouldn\'t rely on this and we can\'t guarantee it will recover your project. Try to load it?',
         description: 'Confirmation to load restore point',
         id: 'tw.restorePoint.confirm'
     }

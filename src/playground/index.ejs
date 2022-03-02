@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google" value="notranslate">
-    <meta name="description" content="TurboWarp is a Scratch mod with a compiler to run projects faster, dark mode for your eyes, a bunch of addons to improve the editor, and more." />
     <title><%= htmlWebpackPlugin.options.title %></title>
+	<link rel="icon" href="<%= htmlWebpackPlugin.options.root %>favicon.png">
     <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.root %>images/apple-touch-icon.png">
     <% if (htmlWebpackPlugin.options.root === "/" || htmlWebpackPlugin.options.root === "") { %>
       <link rel="manifest" href="<%= htmlWebpackPlugin.options.root %>manifest.webmanifest">
@@ -14,7 +14,7 @@
       #splash {
         position: absolute; width: 100%; height: 100%; top: 0; left: 0;
         display: flex; align-items: center; justify-content: center;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ff4c4c;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #24652f;
       }
       .tw-loaded #splash, #splash-content { display: none; }
       #splash[splash-theme="dark"] { background-color: #333; color: #fff; }

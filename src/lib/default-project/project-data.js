@@ -51,7 +51,7 @@ const projectData = translateFunction => {
             },
             {
                 isStage: false,
-                name: translator(messages.sprite, {index: 1}),
+                name: "Communicat",
                 variables: {},
                 lists: {},
                 broadcasts: {},
@@ -60,16 +60,52 @@ const projectData = translateFunction => {
                 currentCostume: 0,
                 costumes: [
                     {
-                        assetId: 'b4ab6b3b69de1bc3ed6a94ace172a0b0',
-                        name: translator(messages.costume, {index: 1}),
+                        assetId: "b551df3ba49e6475928309214f51bd94",
+                        name: "Communicat-a",
                         bitmapResolution: 1,
-                        md5ext: 'b4ab6b3b69de1bc3ed6a94ace172a0b0.svg',
-                        dataFormat: 'svg',
-                        rotationCenterX: 44,
-                        rotationCenterY: 44
+                        md5ext: "b551df3ba49e6475928309214f51bd94.svg",
+                        dataFormat: "svg",
+                        rotationCenterX: 48.20865451049096,
+                        rotationCenterY: 49.61842375318162
+                    },
+                    {
+                        assetId: "b62c61a6c0384f71872990115d93eea8",
+                        name: "Communicat-b",
+                        bitmapResolution: 1,
+                        md5ext: "b62c61a6c0384f71872990115d93eea8.svg",
+                        dataFormat: "svg",
+                        rotationCenterX: 46.1326061009419,
+                        rotationCenterY: 52.471372930065456
+                    },
+                    {
+                        assetId: "814a2e4591c4eab9e832b88d16d3988d",
+                        name: "Communicat-c",
+                        bitmapResolution: 1,
+                        md5ext: "814a2e4591c4eab9e832b88d16d3988d.svg",
+                        dataFormat: "svg",
+                        rotationCenterX: 55.23697676581517,
+                        rotationCenterY: 29.391930273437737
+                    },
+                    {
+                        assetId: "78ed5bb0fefd8984546468e1a1ebb1b6",
+                        name: "Communicat-d",
+                        bitmapResolution: 1,
+                        md5ext: "78ed5bb0fefd8984546468e1a1ebb1b6.svg",
+                        dataFormat: "svg",
+                        rotationCenterX: 48.44891835577772,
+                        rotationCenterY: 41.586213103483544
                     }
                 ],
-                sounds: [],
+                sounds: [
+                    {
+                        assetId: "83c36d806dc92327b9e7049a565c6bff",
+                        name: "Meow",
+                        dataFormat: "wav",
+                        rate: 48000,
+                        sampleCount: 40681,
+                        md5ext: "83c36d806dc92327b9e7049a565c6bff.wav"
+                    }
+                ],
                 volume: 100,
                 visible: true,
                 x: 0,

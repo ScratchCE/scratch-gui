@@ -158,28 +158,28 @@ module.exports = [
                 chunks: ['editor'],
                 template: 'src/playground/index.ejs',
                 filename: 'editor.html',
-                title: 'TurboWarp - Run Scratch projects faster',
+                title: 'Scratch Community Edition',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['player'],
                 template: 'src/playground/index.ejs',
                 filename: 'index.html',
-                title: 'TurboWarp - Run Scratch projects faster',
+                title: 'Scratch Community Edition',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['fullscreen'],
                 template: 'src/playground/index.ejs',
                 filename: 'fullscreen.html',
-                title: 'TurboWarp - Run Scratch projects faster',
+                title: 'Scratch Community Edition',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['embed'],
                 template: 'src/playground/index.ejs',
                 filename: 'embed.html',
-                title: 'Embedded Project - TurboWarp',
+                title: 'Embedded Project - Scratch Community Edition',
                 noTheme: true,
                 ...htmlWebpackPluginCommon
             }),
@@ -187,7 +187,7 @@ module.exports = [
                 chunks: ['addon-settings'],
                 template: 'src/playground/simple.ejs',
                 filename: 'addons.html',
-                title: 'Addon Settings - TurboWarp',
+                title: 'Addon Settings - Scratch Community Edition',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
