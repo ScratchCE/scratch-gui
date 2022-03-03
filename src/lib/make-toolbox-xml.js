@@ -509,7 +509,7 @@ const sensing = function (isInitialSetup, isStage) {
             </value>
         </block>
 		<block type="sensing_lastkeypressed"/>
-        <block type="sensing_mousedown"/>
+		${blockSeparator}
 		<block type="sensing_mousebuttondown">
             <value name="BUTTON">
                 <shadow type="sensing_mousebuttondownmenu"/>
