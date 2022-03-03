@@ -370,6 +370,8 @@ const events = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
+		<block type="control_restart"/>
+		${blockSeparator}
         <block type="event_whenkeypressed">
         </block>
         ${isStage ? `
@@ -455,8 +457,6 @@ const control = function (isInitialSetup, isStage) {
             </block>
             <block type="control_delete_this_clone"/>
         `}
-		${blockSeparator}
-		<block type="control_restart"/>
         ${categorySeparator}
     </category>
     `;
@@ -508,7 +508,13 @@ const sensing = function (isInitialSetup, isStage) {
                 <shadow type="sensing_keyoptions"/>
             </value>
         </block>
+		<block type="sensing_lastkeypressed"/>
         <block type="sensing_mousedown"/>
+		<block type="sensing_mousebuttondown">
+            <value name="BUTTON">
+                <shadow type="sensing_mousebuttondownmenu"/>
+            </value>
+        </block>
         <block type="sensing_mousex"/>
         <block type="sensing_mousey"/>
         ${isStage ? '' : `

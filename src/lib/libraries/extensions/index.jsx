@@ -322,7 +322,7 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
     },
-    {
+    /*{
         name: (
             <FormattedMessage
                 defaultMessage="TurboWarp Blocks"
@@ -341,7 +341,7 @@ export default [
         ),
         featured: true,
         incompatibleWithScratch: true
-    },
+    },*/
     {
         name: (
             <FormattedMessage

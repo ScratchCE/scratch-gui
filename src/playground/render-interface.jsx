@@ -47,7 +47,7 @@ import styles from './interface.css';
 
 if (window.parent !== window) {
     // eslint-disable-next-line no-alert
-    alert('This page is embedding TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
+    alert('This page is embedding this in a way that is unsupported and will cease to function in the near future.');
     throw new Error('Invalid embed');
 }
 
@@ -95,79 +95,36 @@ const Footer = () => (
             <div className={styles.footerText}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="TurboWarp is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
-                    description="Disclaimer that TurboWarp is not connected to Scratch"
+                    defaultMessage="Scratch Community Edition is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
+                    description="Disclaimer that Scratch CE is not connected to Scratch"
                     id="tw.footer.disclaimer"
                 />
             </div>
             <div className={styles.footerColumns}>
                 <div className={styles.footerSection}>
-                    <a href="https://fosshost.org/">
+					<a href="https://docs.turbowarp.org/url-parameters">
                         <FormattedMessage
-                            defaultMessage="Hosting provided by Fosshost"
-                            description="Fosshost link in footer"
-                            id="tw.footer.fosshost"
+                            defaultMessage="TurboWarp URL Parameters"
+                            description="Footer item for TurboWarp URL parameters link"
+                            id="sce.footer.parameters"
                         />
                     </a>
-                    <a href="credits.html">
+                </div>
+				<div className={styles.footerSection}>
+                    <a href="https://discord.gg/4kypmtHck9">
                         <FormattedMessage
-                            defaultMessage="Credits"
-                            description="Credits link in footer"
-                            id="tw.footer.credits"
+                            defaultMessage="Discord Server"
+                            description="Link to Discord invite link"
+                            id="sce.server"
                         />
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://desktop.turbowarp.org/">
-                        {/* Do not translate */}
-                        {'TurboWarp Desktop'}
-                    </a>
-                    <a href="https://packager.turbowarp.org/">
-                        {/* Do not translate */}
-                        {'TurboWarp Packager'}
-                    </a>
-                    <a href="https://docs.turbowarp.org/embedding">
-                        <FormattedMessage
-                            defaultMessage="Embedding"
-                            description="Menu bar item for embedding link"
-                            id="tw.footer.embed"
-                        />
-                    </a>
-                    <a href="https://docs.turbowarp.org/url-parameters">
-                        <FormattedMessage
-                            defaultMessage="URL Parameters"
-                            description="Menu bar item for URL parameters link"
-                            id="tw.footer.parameters"
-                        />
-                    </a>
-                    <a href="https://docs.turbowarp.org/translate">
-                        <FormattedMessage
-                            defaultMessage="Help Translate TurboWarp"
-                            description="Menu bar item for translating TurboWarp link"
-                            id="tw.footer.translate"
-                        />
-                    </a>
-                </div>
-                <div className={styles.footerSection}>
-                    <a href="https://scratch.mit.edu/users/GarboMuffin/#comments">
-                        <FormattedMessage
-                            defaultMessage="Feedback & Bugs"
-                            description="Link to feedback/bugs page"
-                            id="tw.feedback"
-                        />
-                    </a>
-                    <a href="https://github.com/TurboWarp/">
+                    <a href="https://github.com/ScratchCE/">
                         <FormattedMessage
                             defaultMessage="Source Code"
                             description="Link to source code"
                             id="tw.code"
-                        />
-                    </a>
-                    <a href="privacy.html">
-                        <FormattedMessage
-                            defaultMessage="Privacy Policy"
-                            description="Link to privacy policy"
-                            id="tw.privacy"
                         />
                     </a>
                 </div>
@@ -188,9 +145,9 @@ class Interface extends React.Component {
     }
     handleUpdateProjectTitle (title, isDefault) {
         if (isDefault || !title) {
-            document.title = `TurboWarp - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
+            document.title = `Scratch Community Edition`;
         } else {
-            document.title = `${title} - TurboWarp`;
+            document.title = `${title} - Scratch Community Edition`;
         }
     }
     render () {
@@ -269,19 +226,6 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            <div className={styles.section}>
-                                <p>
-                                    <FormattedMessage
-                                        // eslint-disable-next-line max-len
-                                        defaultMessage="TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below."
-                                        description="Description of TurboWarp"
-                                        id="tw.home.description"
-                                    />
-                                </p>
-                            </div>
-                            <div className={styles.section}>
-                                <FeaturedProjects studio="27205657" />
-                            </div>
                         </React.Fragment>
                     ) : null}
                 </div>

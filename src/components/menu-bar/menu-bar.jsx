@@ -860,23 +860,6 @@ class MenuBar extends React.Component {
                             />
                         ) : []))}
                     </div>
-                    {/* tw: add a feedback button */}
-                    <div className={styles.menuBarItem}>
-                        <a
-                            className={styles.feedbackLink}
-                            href="https://scratch.mit.edu/users/CST1229/#comments"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            <Button className={styles.feedbackButton}>
-                                <FormattedMessage
-                                    defaultMessage="Feedback"
-                                    description="Button to give feedback in the menu bar"
-                                    id="tw.feedbackButton"
-                                />
-                            </Button>
-                        </a>
-                    </div>
                 </div>
 
                 <div className={styles.accountInfoGroup}>
