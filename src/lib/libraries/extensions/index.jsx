@@ -50,6 +50,9 @@ import twIcon from './tw/tw.svg';
 
 import customExtensionIcon from './custom/custom.svg';
 
+import physicsIconURL from './griffpatch/physics.png';
+import physicsInsetIconURL from './griffpatch/physics-small.svg';
+
 export default [
     {
         name: (
@@ -154,6 +157,21 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: 'Physics',
+        extensionId: 'griffpatch',
+        collaborator: 'Griffpatch',
+        iconURL: physicsIconURL,
+        insetIconURL: physicsInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Make sprites realistically collide and fall."
+                description="Description for the 'Physics' extension"
+                id="sce.physicsExtension.description"
+            />
+        ),
+        featured: true
     },
     {
         name: 'Makey Makey',

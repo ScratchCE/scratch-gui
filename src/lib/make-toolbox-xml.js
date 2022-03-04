@@ -159,7 +159,7 @@ const xmlEscape = function (unsafe) {
     });
 };
 
-const looks = function (isInitialSetup, isStage, targetId, costumeName, backdropName) {
+const looks = function (isInitialSetup, isStage, targetId, costumeName, backdropName, targetName) {
     const hello = translate('LOOKS_HELLO', 'Hello!');
     const hmm = translate('LOOKS_HMM', 'Hmm...');
     return `
@@ -220,6 +220,13 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
+			<block type="looks_changebackdropby" id="looks_changebackdropby">
+                <value name="CHANGE">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="looks_navbackdrop"/>
         ` : `
             <block id="${targetId}_switchcostumeto" type="looks_switchcostumeto">
@@ -239,6 +246,13 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             <block type="looks_navcostume"/>
 			${blockSeparator}
             <block type="looks_switchbackdropto">
+                <value name="BACKDROP">
+                    <shadow type="looks_backdrops">
+                        <field name="BACKDROP">${backdropName}</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_switchbackdroptoandwait">
                 <value name="BACKDROP">
                     <shadow type="looks_backdrops">
                         <field name="BACKDROP">${backdropName}</field>
@@ -298,6 +312,14 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
+			<block type="looks_goontopof">
+                <value name="SPRITE">
+                    <shadow type="looks_sprite">
+                        <field name="SPRITE">${targetName}</field>
+                    </shadow>
+                </value>
+            </block>
+
         `}
         ${isStage ? `
             <block id="backdropnumbername" type="looks_backdropnumbername"/>
@@ -371,6 +393,7 @@ const events = function (isInitialSetup, isStage) {
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
 		<block type="control_restart"/>
+        <block type="event_whenstopsignclicked"/>
 		${blockSeparator}
         <block type="event_whenkeypressed">
         </block>
@@ -380,6 +403,11 @@ const events = function (isInitialSetup, isStage) {
             <block type="event_whenthisspriteclicked"/>
         `}
         <block type="event_whenbackdropswitchesto">
+        </block>
+		<block type="event_whentouchingobject">
+            <value name="TOUCHINGOBJECTMENU">
+                <shadow type="event_touchingobjectmenu"></shadow>
+            </value>
         </block>
         ${blockSeparator}
         <block type="event_whengreaterthan">
@@ -751,6 +779,7 @@ const myBlocks = function () {
         colour="#FF6680"
         secondaryColour="#FF4D6A"
         custom="PROCEDURE">
+		<block type="procedures_return" id="procedures_return">
     </category>
     `;
 };
@@ -781,13 +810,14 @@ const xmlClose = '</xml>';
  * @returns {string} - a ScratchBlocks-style XML document for the contents of the toolbox.
  */
 const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categoriesXML = [],
-    costumeName = '', backdropName = '', soundName = '') {
+    costumeName = '', backdropName = '', soundName = '', targetName = '') {
     isStage = isInitialSetup || isStage;
     const gap = [categorySeparator];
 
     costumeName = xmlEscape(costumeName);
     backdropName = xmlEscape(backdropName);
     soundName = xmlEscape(soundName);
+	targetName = xmlEscape(targetName);
 
     categoriesXML = categoriesXML.slice();
     const moveCategory = categoryId => {
@@ -800,7 +830,7 @@ const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categ
         // return `undefined`
     };
     const motionXML = moveCategory('motion') || motion(isInitialSetup, isStage, targetId);
-    const looksXML = moveCategory('looks') || looks(isInitialSetup, isStage, targetId, costumeName, backdropName);
+    const looksXML = moveCategory('looks') || looks(isInitialSetup, isStage, targetId, costumeName, backdropName, targetName);
     const soundXML = moveCategory('sound') || sound(isInitialSetup, isStage, targetId, soundName);
     const eventsXML = moveCategory('event') || events(isInitialSetup, isStage, targetId);
     const controlXML = moveCategory('control') || control(isInitialSetup, isStage, targetId);

@@ -19,7 +19,7 @@ const messages = defineMessages({
     },
     stopTitle: {
         id: 'gui.controls.stop',
-        defaultMessage: 'Stop',
+        defaultMessage: 'Stop (Shift+click or right-click to not run stop clicked blocks)',
         description: 'Stop button title'
     }
 });

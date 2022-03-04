@@ -386,7 +386,8 @@ class Blocks extends React.Component {
             return makeToolboxXML(false, target.isStage, target.id, dynamicBlocksXML,
                 targetCostumes[targetCostumes.length - 1].name,
                 stageCostumes[stageCostumes.length - 1].name,
-                targetSounds.length > 0 ? targetSounds[targetSounds.length - 1].name : ''
+                targetSounds.length > 0 ? targetSounds[targetSounds.length - 1].name : '',
+				target.sprite.name
             );
         } catch {
             return null;

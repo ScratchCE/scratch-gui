@@ -39,6 +39,12 @@ class Controls extends React.Component {
     handleStopAllClick (e) {
         e.preventDefault();
         this.props.vm.stopAll();
+		
+		// Don't run stop clicked scripts if shift is held
+		// or the stop sign is right-clicked
+		if (!(e.shiftKey || e.type === 'contextmenu')) {
+			this.props.vm.runtime.startHats('event_whenstopsignclicked');
+		}
     }
     render () {
         const {

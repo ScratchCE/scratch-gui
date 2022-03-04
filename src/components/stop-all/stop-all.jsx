@@ -26,6 +26,9 @@ const StopAllComponent = function (props) {
             src={stopAllIcon}
             title={title}
             onClick={onClick}
+			// For right-clicking to force-stop
+			// (stop without triggering stop clicked blocks)
+			onContextMenu={onClick}
             {...componentProps}
         />
     );

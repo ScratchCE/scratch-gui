@@ -860,6 +860,9 @@ class MenuBar extends React.Component {
                             />
                         ) : []))}
                     </div>
+					<div className={classNames(styles.menuBarItem, styles.versionNum)}>
+						v0.3.1
+					</div>
                 </div>
 
                 <div className={styles.accountInfoGroup}>

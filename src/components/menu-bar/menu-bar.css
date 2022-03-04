@@ -238,3 +238,7 @@
     color: $ui-white !important;
     text-decoration: none;
 }
+
+.version-num {
+	padding: 0 0.5em;
+}

@@ -108,6 +108,10 @@ export default async function ({ addon, global, console, msg }) {
           opcode: "looks_changeeffectby",
           remap: { VALUE: "CHANGE" },
         },
+		{
+          opcode: "looks_colorfxtest",
+          remap: { VALUE: "TEST" },
+        },
       ];
       blockSwitches["looks_changeeffectby"] = [
         {
@@ -115,6 +119,21 @@ export default async function ({ addon, global, console, msg }) {
           remap: { CHANGE: "VALUE" },
         },
         noopSwitch,
+		{
+          opcode: "looks_colorfxtest",
+          remap: { CHANGE: "TEST" },
+        },
+      ];
+	  blockSwitches["looks_colorfxtest"] = [
+        {
+          opcode: "looks_seteffectto",
+          remap: { TEST: "VALUE" },
+        },
+        {
+          opcode: "looks_changeeffectby",
+          remap: { TEST: "CHANGE" },
+        },
+		noopSwitch,
       ];
       blockSwitches["looks_setsizeto"] = [
         noopSwitch,

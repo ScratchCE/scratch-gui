@@ -130,7 +130,8 @@ export default function (vm) {
                 }
             }
         }
-        return sprites;
+		const stage = ScratchBlocks.ScratchMsgs.translate('LOOKS_GOONTOPOF_STAGE', 'Stage');
+        return [[stage, '_stage_']].concat(sprites);
     };
 	
     const cloneMenu = function () {
@@ -176,6 +177,11 @@ export default function (vm) {
 
     ScratchBlocks.Blocks.looks_costume.init = function () {
         const json = jsonForMenuBlock('COSTUME', costumesMenu, looksColors, []);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.looks_sprite.init = function () {
+        const json = jsonForMenuBlock('SPRITE', spriteMenu, looksColors, []);
         this.jsonInit(json);
     };
 
