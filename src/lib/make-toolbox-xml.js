@@ -779,7 +779,6 @@ const myBlocks = function () {
         colour="#FF6680"
         secondaryColour="#FF4D6A"
         custom="PROCEDURE">
-		<block type="procedures_return" id="procedures_return">
     </category>
     `;
 };
