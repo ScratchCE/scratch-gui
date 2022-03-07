@@ -44,9 +44,9 @@ $error-primary: hsla(30, 100%, 55%, 1); /* #FF8C1A */
 $error-light: hsla(30, 100%, 70%, 1); /* #FFB366 */
 $error-transparent: hsla(30, 100%, 55%, 0.25); /* #FF8C1A */
 
-$extensions-primary: hsla(126, 59%, 45%, 1);
-$extensions-tertiary: hsla(126, 59%, 40%, 1);
-$extensions-transparent: hsla(126, 59%, 45%, 0.35); /* 35% transparent version of extensions-primary */
-$extensions-light: hsla(126, 59%, 60%, 1); /* opaque version of extensions-transparent, on white bg */
+$extensions-primary: hsla(163, 85%, 40%, 1);
+$extensions-tertiary: hsla(163, 85%, 36%, 1);
+$extensions-transparent: hsla(163, 85%, 40%, 0.36); /* 35% transparent version of extensions-primary */
+$extensions-light: hsla(163, 85%, 65%, 1); /* opaque version of extensions-transparent, on white bg */
 
 $drop-highlight: hsla(124, 42%, 66%, 1); /* lighter than motion-primary */

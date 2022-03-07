@@ -43,6 +43,11 @@ const messages = defineMessages({
         description: 'Label for the backdrop number monitor when shown on the stage',
         id: 'gui.opcodeLabels.backdropnumber'
     },
+    looks_stretch: {
+        defaultMessage: 'stretch',
+        description: 'Label for the stretch monitor when shown on the stage',
+        id: 'gui.opcodeLabels.stretch'
+    },
 
 
     // Sound
@@ -140,6 +145,7 @@ class OpcodeLabels {
             looks_costumenumbername: {category: 'looks'},
             looks_backdropnumbername: {category: 'looks'},
             looks_backdropname: {category: 'looks'},
+            looks_stretch: {category: 'looks'},
 
             // Data
             data_variable: {category: 'data'},
@@ -196,6 +202,7 @@ class OpcodeLabels {
             return this._translator(messages.looks_backdropname);
         };
         this._opcodeMap.looks_backdropname.labelFn = () => this._translator(messages.looks_backdropname);
+        this._opcodeMap.looks_stretch.labelFn = () => this._translator(messages.looks_stretch);
 
         // Data
         this._opcodeMap.data_variable.labelFn = params => params.VARIABLE;

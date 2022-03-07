@@ -42,6 +42,7 @@ const emptySprite = (name, soundName, costumeName) => ({
     scratchX: 36,
     scratchY: 28,
     scale: 1,
+	stretch: 100,
     direction: 90,
     rotationStyle: 'normal',
     isDraggable: false,

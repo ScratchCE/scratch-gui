@@ -52,8 +52,12 @@
         The line below works for Edge, the `::-webkit-scrollbar` line
         below that is for webkit browsers. It isn't possible to do the
         same for Firefox, so a different solution may be needed for them.
+		
+		CST: scrollbar-width works for Firefox, although it isn't supported
+		in every Firefox version Scratch supports.
     */
     -ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 [dir="rtl"] .blocks :global(.blocklyToolboxDiv) {

@@ -55,7 +55,7 @@ if (locale !== 'en') {
     }
 }
 
-document.title = `${settingsTranslations.title} - TurboWarp`;
+document.title = `${settingsTranslations.title} - Scratch Community Edition`;
 
 const theme = getInitialDarkMode() ? 'dark' : 'light';
 document.body.setAttribute('theme', theme);

@@ -130,8 +130,7 @@ export default function (vm) {
                 }
             }
         }
-		const stage = ScratchBlocks.ScratchMsgs.translate('LOOKS_GOONTOPOF_STAGE', 'Stage');
-        return [[stage, '_stage_']].concat(sprites);
+        return sprites;
     };
 	
     const cloneMenu = function () {
@@ -181,7 +180,10 @@ export default function (vm) {
     };
 
     ScratchBlocks.Blocks.looks_sprite.init = function () {
-        const json = jsonForMenuBlock('SPRITE', spriteMenu, looksColors, []);
+        const stage = ScratchBlocks.ScratchMsgs.translate('LOOKS_GOONTOPOF_STAGE', 'Stage');
+		const json = jsonForMenuBlock('SPRITE', spriteMenu, looksColors, [
+			[[stage, '_stage_']]
+		]);
         this.jsonInit(json);
     };
 
@@ -262,6 +264,7 @@ export default function (vm) {
                 [ScratchBlocks.Msg.SENSING_OF_COSTUMENUMBER, 'costume #'],
                 [ScratchBlocks.Msg.SENSING_OF_COSTUMENAME, 'costume name'],
                 [ScratchBlocks.Msg.SENSING_OF_SIZE, 'size'],
+                [ScratchBlocks.Msg.SENSING_OF_STRETCH, 'stretch'],
                 [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume']
             ];
             if (vm.editingTarget) {
