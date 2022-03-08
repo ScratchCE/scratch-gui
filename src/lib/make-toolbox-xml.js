@@ -424,6 +424,7 @@ const events = function (isInitialSetup, isStage) {
                 <shadow type="event_touchingobjectmenu"></shadow>
             </value>
         </block>
+		<block type="event_when"/>
         ${blockSeparator}
         <block type="event_whengreaterthan">
             <value name="VALUE">
@@ -434,7 +435,7 @@ const events = function (isInitialSetup, isStage) {
         </block>
         ${blockSeparator}
         <block type="event_whenbroadcastreceived">
-        </block>
+		</block>
         <block type="event_broadcast">
             <value name="BROADCAST_INPUT">
                 <shadow type="event_broadcast_menu"></shadow>
