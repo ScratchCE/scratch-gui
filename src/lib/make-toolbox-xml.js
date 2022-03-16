@@ -409,6 +409,7 @@ const events = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
+        <block type="event_whenstopsignclicked"/>
 		${blockSeparator}
         <block type="event_whenkeypressed">
         </block>
@@ -448,7 +449,6 @@ const events = function (isInitialSetup, isStage) {
         </block>
 		${blockSeparator}
 		<block type="control_restart"/>
-        <block type="event_whenstopsignclicked"/>
         ${categorySeparator}
     </category>
     `;
@@ -748,8 +748,8 @@ const operators = function (isInitialSetup) {
         ${blockSeparator}
         <block type="operator_and"/>
         <block type="operator_or"/>
-        <block type="operator_not"/>
         <block type="operator_xor"/>
+        <block type="operator_not"/>
         ${blockSeparator}
         ${isInitialSetup ? '' : `
             <block type="operator_join">

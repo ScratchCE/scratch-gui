@@ -97,7 +97,7 @@ const Footer = () => (
                     // eslint-disable-next-line max-len
                     defaultMessage="Scratch Community Edition is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
                     description="Disclaimer that Scratch CE is not connected to Scratch"
-                    id="tw.footer.disclaimer"
+                    id="sce.footer.disclaimer"
                 />
             </div>
             <div className={styles.footerColumns}>
@@ -114,7 +114,7 @@ const Footer = () => (
                     <a href="https://discord.gg/4kypmtHck9">
                         <FormattedMessage
                             defaultMessage="Discord Server"
-                            description="Link to Discord invite link"
+                            description="Link to Scratch CE Discord invite link"
                             id="sce.server"
                         />
                     </a>
