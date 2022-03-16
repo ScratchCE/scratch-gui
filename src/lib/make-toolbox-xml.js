@@ -313,6 +313,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             </value>
         </block>
         <block type="looks_cleargraphiceffects"/>
+		<block type="looks_geteffect"/>
         ${blockSeparator}
         ${isStage ? '' : `
             <block type="looks_show"/>
@@ -382,6 +383,7 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
             </value>
         </block>
         <block type="sound_cleareffects"/>
+		<block type="sound_geteffect"/>
         ${blockSeparator}
         <block type="sound_changevolumeby">
             <value name="VOLUME">
@@ -407,8 +409,6 @@ const events = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
-		<block type="control_restart"/>
-        <block type="event_whenstopsignclicked"/>
 		${blockSeparator}
         <block type="event_whenkeypressed">
         </block>
@@ -446,12 +446,16 @@ const events = function (isInitialSetup, isStage) {
               <shadow type="event_broadcast_menu"></shadow>
             </value>
         </block>
+		${blockSeparator}
+		<block type="control_restart"/>
+        <block type="event_whenstopsignclicked"/>
         ${categorySeparator}
     </category>
     `;
 };
 
 const control = function (isInitialSetup, isStage) {
+    const hello = translate('LOOKS_HELLO', 'Hello!');
     return `
     <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17">
         <block type="control_wait">
@@ -483,6 +487,8 @@ const control = function (isInitialSetup, isStage) {
                 </shadow>
             </value>
         </block>
+		<block id="control_all_at_once" type="control_all_at_once"/>
+		<block id="launch" type="control_launch"/>
         ${blockSeparator}
         <block type="control_stop"/>
         ${blockSeparator}
@@ -661,7 +667,7 @@ const operators = function (isInitialSetup) {
         <block type="operator_neg">
             <value name="NUM">
                 <shadow type="math_number">
-                    <field name="NUM">1</field>
+                    <field name="NUM"></field>
                 </shadow>
             </value>
         </block>
@@ -739,18 +745,6 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
-        <block type="operator_identical">
-            <value name="OPERAND1">
-                <shadow type="text">
-                    <field name="TEXT">a</field>
-                </shadow>
-            </value>
-            <value name="OPERAND2">
-                <shadow type="text">
-                    <field name="TEXT">A</field>
-                </shadow>
-            </value>
-        </block>
         ${blockSeparator}
         <block type="operator_and"/>
         <block type="operator_or"/>
@@ -782,39 +776,10 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
-            <block type="operator_letters_of">
-                <value name="LETTER1">
-                    <shadow type="math_whole_number">
-                        <field name="NUM">2</field>
-                    </shadow>
-                </value>
-                 <value name="LETTER2">
-                    <shadow type="math_whole_number">
-                        <field name="NUM">4</field>
-                    </shadow>
-                </value>
-               <value name="STRING">
-                    <shadow type="text">
-                        <field name="TEXT">${apple}</field>
-                    </shadow>
-                </value>
-            </block>
             <block type="operator_length">
                 <value name="STRING">
                     <shadow type="text">
                         <field name="TEXT">${apple}</field>
-                    </shadow>
-                </value>
-            </block>
-			<block type="operator_repeat" id="operator_repeat">
-              <value name="STRING">
-                <shadow type="text">
-                  <field name="TEXT">${apple} </field>
-                </shadow>
-              </value>
-              <value name="REPEAT">
-                    <shadow type="math_whole_number">
-                        <field name="NUM">3</field>
                     </shadow>
                 </value>
             </block>
@@ -830,79 +795,6 @@ const operators = function (isInitialSetup) {
                   <field name="TEXT">${letter}</field>
                 </shadow>
               </value>
-            </block>
-            <block type="operator_indexof" id="operator_indexof">
-              <value name="SUBSTRING">
-                <shadow type="text">
-                  <field name="TEXT">${count}</field>
-                </shadow>
-              </value>
-              <value name="STRING">
-                <shadow type="text">
-                  <field name="TEXT">${apple}</field>
-                </shadow>
-              </value>
-            </block>
-			<block type="operator_count" id="operator_count">
-              <value name="SUBSTRING">
-                <shadow type="text">
-                  <field name="TEXT">${count}</field>
-                </shadow>
-              </value>
-              <value name="STRING">
-                <shadow type="text">
-                  <field name="TEXT">${apple}</field>
-                </shadow>
-              </value>
-            </block>
-			<block type="operator_split" id="operator_split">
-              <value name="ITEM">
-                <shadow type="text">
-                  <field name="TEXT">3</field>
-                </shadow>
-              </value>
-              <value name="STRING">
-                <shadow type="text">
-                  <field name="TEXT">${apple}</field>
-                </shadow>
-              </value>
-			  <value name="SPLIT">
-                <shadow type="text">
-                  <field name="TEXT">${count}</field>
-                </shadow>
-              </value>
-            </block>
-			<block type="operator_replace" id="operator_replace">
-              <value name="SUBSTRING">
-                <shadow type="text">
-                  <field name="TEXT">${world}</field>
-                </shadow>
-              </value>
-              <value name="STRING">
-                <shadow type="text">
-                  <field name="TEXT">${helloworld}</field>
-                </shadow>
-              </value>
-			  <value name="REPLACE">
-                <shadow type="text">
-                  <field name="TEXT">${griff}</field>
-                </shadow>
-              </value>
-            </block>
-			${blockSeparator}
-            <block type="operator_unicodeof">
-                <value name="STRING">
-                    <shadow type="text">
-                        <field name="TEXT">A</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="operator_unicodefrom">
-                <value name="NUM">
-                    <shadow type="math_whole_number">
-                        <field name="NUM">65</field>
-                    </shadow>
-                </value>
             </block>
         `}
         ${blockSeparator}

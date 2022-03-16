@@ -861,7 +861,7 @@ class MenuBar extends React.Component {
                         ) : []))}
                     </div>
 					<div className={classNames(styles.menuBarItem, styles.versionNum)}>
-						v0.4.1
+						v0.5.0
 					</div>
                 </div>
 

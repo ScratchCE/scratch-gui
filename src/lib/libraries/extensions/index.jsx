@@ -53,6 +53,12 @@ import customExtensionIcon from './custom/custom.svg';
 import physicsIconURL from './griffpatch/physics.png';
 import physicsInsetIconURL from './griffpatch/physics-small.svg';
 
+import textIconURL from './text/text.png';
+import textInsetIconURL from './text/text-small.svg';
+
+import stringsIconURL from './strings/strings.png';
+
+
 export default [
     {
         name: (
@@ -90,6 +96,44 @@ export default [
                 defaultMessage="Draw with your sprites."
                 description="Description for the 'Pen' extension"
                 id="gui.extension.pen.description"
+            />
+        ),
+        featured: true
+    },
+	{
+        name: (
+            <FormattedMessage
+                defaultMessage="Animated Text"
+                description="Name for the 'Animated Text' extension"
+                id="sce.textExtension.name"
+            />
+        ),
+        extensionId: 'text',
+        iconURL: textIconURL,
+        insetIconURL: textInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Bring words to life."
+                description="Description for the 'Animated Text' extension"
+                id="sce.textExtension.description"
+            />
+        ),
+        featured: true
+    },{
+        name: (
+            <FormattedMessage
+                defaultMessage="Text"
+                description="Name for the 'Text' extension"
+                id="sce.stringsExtension.name"
+            />
+        ),
+        extensionId: 'strings',
+		iconURL: stringsIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="More operators for handling text."
+                description="Description for the 'Text' extension"
+                id="sce.stringsExtension.description"
             />
         ),
         featured: true
