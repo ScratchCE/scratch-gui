@@ -266,6 +266,7 @@ const reducer = function (state, action) {
         }
         return state;
     case START_CREATING_NEW:
+		console.log("START_CREATING_NEW");
         if (state.loadingState === LoadingState.SHOWING_WITHOUT_ID) {
             return Object.assign({}, state, {
                 loadingState: LoadingState.CREATING_NEW
@@ -273,6 +274,7 @@ const reducer = function (state, action) {
         }
         return state;
     case START_FETCHING_NEW:
+		console.log("START_FETCHING_NEW");
         if ([
             LoadingState.SHOWING_WITH_ID,
             LoadingState.SHOWING_WITHOUT_ID
@@ -317,6 +319,7 @@ const reducer = function (state, action) {
         return state;
     case START_UPDATING_BEFORE_CREATING_NEW:
         if (state.loadingState === LoadingState.SHOWING_WITH_ID) {
+			console.log("UPDATING_BEFORE_NEW");
             return Object.assign({}, state, {
                 loadingState: LoadingState.UPDATING_BEFORE_NEW
             });
@@ -471,7 +474,11 @@ const setProjectId = id => ({
 });
 
 const requestNewProject = needSave => {
-    if (needSave) return {type: START_UPDATING_BEFORE_CREATING_NEW};
+	console.log("requestNewProject");
+	if (needSave) {
+		console.log("needSave");
+		return {type: START_UPDATING_BEFORE_CREATING_NEW};
+	}
     return {type: START_FETCHING_NEW};
 };
 

@@ -174,8 +174,8 @@ const ProjectFetcherHOC = function (WrappedComponent) {
         vm: PropTypes.instanceOf(VM)
     };
     ProjectFetcherComponent.defaultProps = {
-        assetHost: 'https://assets.scratch.mit.edu',
-        projectHost: 'https://projects.scratch.mit.edu'
+        assetHost: 'http://localhost:8080/assets',
+        projectHost: 'http://localhost:8080/projects'
     };
 
     const mapStateToProps = state => ({

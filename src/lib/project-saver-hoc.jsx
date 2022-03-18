@@ -67,8 +67,10 @@ const ProjectSaverHOC = function (WrappedComponent) {
             this.props.onSetProjectSaver(this.tryToAutoSave);
         }
         componentDidUpdate (prevProps) {
+			console.log("CST: project-saver-hoc update")
             if (!this.props.isAnyCreatingNewState && prevProps.isAnyCreatingNewState) {
                 this.reportTelemetryEvent('projectWasCreated');
+				console.log("CST: projectWasCreated")
             }
             if (!this.props.isLoading && prevProps.isLoading) {
                 this.reportTelemetryEvent('projectDidLoad');
@@ -78,9 +80,11 @@ const ProjectSaverHOC = function (WrappedComponent) {
                 this.scheduleAutoSave();
             }
             if (this.props.isUpdating && !prevProps.isUpdating) {
+				console.log("CST: updateProjectToStorage")
                 this.updateProjectToStorage();
             }
             if (this.props.isCreatingNew && !prevProps.isCreatingNew) {
+				console.log("CST: createNewProjectToStorage")
                 this.createNewProjectToStorage();
             }
             if (this.props.isCreatingCopy && !prevProps.isCreatingCopy) {
@@ -96,9 +100,11 @@ const ProjectSaverHOC = function (WrappedComponent) {
             // see if we should "create" the current project on the server
             //
             // don't try to create or save immediately after trying to create
+			console.log("CST: eee")
             if (prevProps.isCreatingNew) return;
             // if we're newly able to create this project, create it!
             if (this.isShowingCreatable(this.props) && !this.isShowingCreatable(prevProps)) {
+				console.log("CST: created!")
                 this.props.onCreateProject();
             }
 
@@ -150,7 +156,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
             }
         }
         isShowingCreatable (props) {
-            return props.canCreateNew && props.isShowingWithoutId;
+            return props.canCreateNew /*&& props.isShowingWithoutId*/;
         }
         updateProjectToStorage () {
             this.props.onShowSavingAlert();
@@ -169,6 +175,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
                 });
         }
         createNewProjectToStorage () {
+			console.log("createNewProjectToStorage");
             return this.storeProject(null)
                 .then(response => {
                     this.props.onCreatedProject(response.id.toString(), this.props.loadingState);

@@ -119,7 +119,7 @@ class FileHashRouter extends HashRouter {
     generateURL ({projectId, isPlayerOnly, isFullScreen}) {
         let newPathname = '';
         let newHash = '';
-
+		
         if (projectId !== '0') {
             newHash = `#${projectId}`;
         }
