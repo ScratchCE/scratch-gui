@@ -45,11 +45,13 @@ import runAddons from '../addons/entry';
 
 import styles from './interface.css';
 
+/*
 if (window.parent !== window) {
     // eslint-disable-next-line no-alert
     alert('This page is embedding this in a way that is unsupported and will cease to function in the near future.');
     throw new Error('Invalid embed');
 }
+*/
 
 let announcement = null;
 if (process.env.ANNOUNCEMENT) {
@@ -174,7 +176,7 @@ class Interface extends React.Component {
                     [styles.editor]: isEditor
                 })}
             >
-                {isHomepage ? (
+                {/*isHomepage ? (
                     <div className={styles.menu}>
                         <WrappedMenuBar
                             canChangeLanguage
@@ -184,7 +186,7 @@ class Interface extends React.Component {
                             onClickTheme={onClickTheme}
                         />
                     </div>
-                ) : null}
+                ) : null*/}
                 <div
                     className={styles.center}
                     style={isPlayerOnly ? ({
@@ -209,7 +211,8 @@ class Interface extends React.Component {
                             {isBrowserSupported() ? null : (
                                 <BrowserModal isRtl={isRtl} />
                             )}
-                            <div className={styles.section}>
+							{/*
+							<div className={styles.section}>
                                 <ProjectInput />
                             </div>
                             {hasCloudVariables && projectId !== '0' && (
@@ -226,10 +229,11 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
+							*/}
                         </React.Fragment>
                     ) : null}
                 </div>
-                {isHomepage && <Footer />}
+                {/*isHomepage && <Footer />*/}
             </div>
         );
     }

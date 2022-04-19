@@ -861,7 +861,7 @@ class MenuBar extends React.Component {
                         ) : []))}
                     </div>
 					<div className={classNames(styles.menuBarItem, styles.versionNum)}>
-						v0.5.1
+						v0.6.0-anarchy
 					</div>
                 </div>
 

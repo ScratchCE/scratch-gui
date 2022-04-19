@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers, compose} from 'redux';
 import ConnectedIntlProvider from './connected-intl-provider.jsx';
 import AddonHooks from '../addons/hooks';
+import EventTargetShim from '../addons/event-target';
 
 import localesReducer, {initLocale, localesInitialState} from '../reducers/locales';
 
@@ -30,6 +31,11 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
             let initialState = {};
             let reducers = {};
             let enhancer;
+			
+			// EventTarget EXCLUSIVELY used as a global to allow listening
+			// to Redux events from outside. Does not actually do dispatching.
+			const target = new EventTargetShim();
+			window.ReduxTarget = target; 
 
             let initializedLocales = localesInitialState;
             const locale = detectLocale(Object.keys(locales));
@@ -86,6 +92,12 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
             const reducer2 = (state, action) => {
                 const next = reducer(state, action);
                 AddonHooks.appStateReducer(action, next);
+				target.dispatchEvent(new CustomEvent('statechanged', {
+					detail: {
+						action,
+						next
+					}
+				}));
                 return next;
             };
             this.store = createStore(
@@ -94,6 +106,8 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 enhancer
             );
             window.ReduxStore = this.store;
+			window.dispatchEvent(new CustomEvent('reduxtargetadded'));
+			
             AddonHooks.appStateStore = this.store;
         }
         componentDidUpdate (prevProps) {
