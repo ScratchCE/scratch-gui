@@ -548,7 +548,7 @@ class MenuBar extends React.Component {
                                     onRequestClose={this.props.onRequestCloseFile}
                                 >
 									{ // CST TODO: always show after the new button is fixed
-									(this.props.canSave) && (
+									/*(this.props.canSave) && (
 										<MenuSection>
 											<MenuItem
 												isRtl={this.props.isRtl}
@@ -557,7 +557,7 @@ class MenuBar extends React.Component {
 												{newProjectMessage}
 											</MenuItem>
 										</MenuSection>
-									)}
+									)*/}
                                     {(this.props.canSave || this.props.canCreateCopy || this.props.canRemix) && (
                                         <MenuSection>
                                             {this.props.canSave && (
