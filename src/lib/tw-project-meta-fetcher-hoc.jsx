@@ -2,22 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import log from './log';
+import {defineMessages, injectIntl, intlShape} from 'react-intl';
 
 import {setProjectTitle} from '../reducers/project-title';
 import {setAuthor, setDescription} from '../reducers/tw';
 
 const API_URL = 'https://trampoline.turbowarp.org/proxy/projects/$id';
 
-const fetchProjectMeta = projectId => fetch(API_URL.replace('$id', projectId))
-    .then(r => {
-        if (r.status === 404) {
-            throw new Error('Probably unshared (API returned 404)');
-        }
-        if (r.status !== 200) {
-            throw new Error(`Unexpected status code: ${r.status}`);
-        }
-        return r.json();
-    });
+const messages = defineMessages({
+    defaultProjectTitleWithId: {
+        id: 'sce.gui.defaultProjectTitleWithId',
+        description: 'Default title for project, showing the ID',
+        defaultMessage: 'Project ID {id}'
+    }
+});
+
+// Eventually I'll make it fetch from the servers too.
+// For now, pretend it's always unshared and never actually fetch anything
+const fetchProjectMeta = async projectId => {throw ""};
+/*
+fetch(API_URL.replace('$id', projectId))
+	.then(r => {
+		if (r.status === 404) {
+			throw new Error('Probably unshared (API returned 404)');
+		}
+		if (r.status !== 200) {
+			throw new Error(`Unexpected status code: ${r.status}`);
+		}
+		return r.json();
+	})
+*/
 
 const getNoIndexTag = () => document.querySelector('meta[name="robots"][content="noindex"]');
 const setIndexable = indexable => {
@@ -40,10 +54,14 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             return this.props.projectId !== nextProps.projectId;
         }
         componentDidUpdate () {
-            // project title resetting is handled in titled-hoc.jsx
+            const projectId = this.props.projectId;
+			this.props.onSetProjectTitle(
+				this.props.intl.formatMessage(messages.defaultProjectTitleWithId, {
+					id: projectId.toString()
+				})
+			);
             this.props.onSetAuthor('', '');
             this.props.onSetDescription('', '');
-            const projectId = this.props.projectId;
             // Don't try to load metadata for empty projects.
             if (projectId === '0') {
                 return;
@@ -81,6 +99,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         render () {
             const {
                 /* eslint-disable no-unused-vars */
+				intl,
                 projectId,
                 onSetAuthor,
                 onSetDescription,
@@ -96,6 +115,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         }
     }
     ProjectMetaFetcherComponent.propTypes = {
+		intl: intlShape,
         projectId: PropTypes.string,
         onSetAuthor: PropTypes.func,
         onSetDescription: PropTypes.func,
@@ -115,10 +135,10 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         })),
         onSetProjectTitle: title => dispatch(setProjectTitle(title))
     });
-    return connect(
+    return injectIntl(connect(
         mapStateToProps,
         mapDispatchToProps
-    )(ProjectMetaFetcherComponent);
+    )(ProjectMetaFetcherComponent));
 };
 
 export {

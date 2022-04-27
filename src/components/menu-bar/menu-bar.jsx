@@ -547,14 +547,17 @@ class MenuBar extends React.Component {
                                     place={this.props.isRtl ? 'left' : 'right'}
                                     onRequestClose={this.props.onRequestCloseFile}
                                 >
-                                    <MenuSection>
-                                        <MenuItem
-                                            isRtl={this.props.isRtl}
-                                            onClick={this.handleClickNew}
-                                        >
-                                            {newProjectMessage}
-                                        </MenuItem>
-                                    </MenuSection>
+									{ // CST TODO: always show after the new button is fixed
+									(this.props.canSave) && (
+										<MenuSection>
+											<MenuItem
+												isRtl={this.props.isRtl}
+												onClick={this.handleClickNew}
+											>
+												{newProjectMessage}
+											</MenuItem>
+										</MenuSection>
+									)}
                                     {(this.props.canSave || this.props.canCreateCopy || this.props.canRemix) && (
                                         <MenuSection>
                                             {this.props.canSave && (
